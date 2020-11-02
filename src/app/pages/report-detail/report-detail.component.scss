@@ -1,0 +1,44 @@
+.firstButton {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+mat-spinner {
+  margin: 10px auto;
+}
+
+mat-card-header{
+  word-break: break-all;
+
+  button {
+    max-height: 50px;
+    width: 100%;
+    max-width: fit-content;
+  }
+}
+
+.error404, .errorInvalid {
+  mat-card-header {
+    text-align: center;
+    display: block;
+  }
+
+  mat-card-title {
+    font-size: 100px;
+    margin-bottom: 100px;
+
+    mat-icon {
+      font-size: 100px;
+      margin-top: 20px;
+      margin-right: 100px;
+    }
+  }
+
+  mat-card-title, mat-card-subtitle {
+    width: 100%;
+  }
+}
+
+.errorInvalid mat-icon{
+  width: 100%;
+}
