@@ -1,1 +1,8 @@
-<p>reports works!</p>
+<div *ngFor="let report of reports">
+  <h1>{{report.filename}}</h1>
+  <h2>md5: {{report.md5}}</h2>
+  <a href="{{report.resource_uri}}">{{report.resource_uri}}</a>
+  <h2>sha1: {{report.sha1}}</h2>
+  <h2>sha256: {{report.sha256}}</h2>
+</div>
+

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { ReportDetailComponent } from './pages/report-detail/report-detail.component';
 import { UploadComponent } from './pages/upload/upload.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UploadComponent } from './pages/upload/upload.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

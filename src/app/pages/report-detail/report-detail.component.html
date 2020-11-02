@@ -1,1 +1,16 @@
-<p>report-detail {{reportId}} works!</p>
+<div *ngIf="report===undefined">
+  Spinning
+</div>
+<div *ngIf="report">
+  <h1>{{report.filename}}</h1>
+  <h2>md5: {{report.md5}}</h2>
+  <a href="{{report.resource_uri}}">{{report.resource_uri}}</a>
+  <h2>sha1: {{report.sha1}}</h2>
+  <h2>sha256: {{report.sha256}}</h2>
+</div>
+<div *ngIf="show404">
+  404 not found
+</div>
+<div *ngIf="showInvalid">
+  apk is invalid
+</div>

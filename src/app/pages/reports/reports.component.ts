@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ReportService} from '../../services/report.service';
+import {Report} from '../../models/Report';
 
 @Component({
   selector: 'app-reports',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reports.component.scss']
 })
 export class ReportsComponent implements OnInit {
+  reports: Report[];
 
-  constructor() { }
+  constructor(
+    private readonly reportService: ReportService
+  ) {
+  }
 
   ngOnInit(): void {
+    this.reportService.getAllReports().subscribe(report => {
+      this.reports = report;
+    });
   }
 
 }
