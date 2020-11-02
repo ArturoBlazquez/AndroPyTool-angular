@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #eee;
+}
+
+
+mat-card {
+  max-width: 720px;
+  margin: 10px auto;
+  word-break: break-all;
+}
+
+.report-header-image {
+  background-image: url('assets/apk.jpg');
+  background-size: cover;
+}
