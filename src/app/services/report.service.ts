@@ -40,4 +40,29 @@ export class ReportService {
       }),
     );
   }
+
+  public getFlowDroid(id: string): Observable<any> {
+    return this.httpClient.get(environment.restApiUrl + 'reports/' + id + '/static/flowdroid')
+      .pipe(retry(1));
+  }
+
+  public getAndroPyTool(id: string): Observable<any> {
+    return this.httpClient.get(environment.restApiUrl + 'reports/' + id + '/static/andropytool')
+      .pipe(retry(1));
+  }
+
+  public getDroidBox(id: string): Observable<any> {
+    return this.httpClient.get(environment.restApiUrl + 'reports/' + id + '/dynamic/droidbox')
+      .pipe(retry(1));
+  }
+
+  public getStrace(id: string): Observable<any> {
+    return this.httpClient.get(environment.restApiUrl + 'reports/' + id + '/dynamic/strace', {responseType: 'text'})
+      .pipe(retry(1));
+  }
+
+  public getVirusTotal(id: string): Observable<any> {
+    return this.httpClient.get(environment.restApiUrl + 'reports/' + id + '/virustotal', {responseType: 'text'})
+      .pipe(retry(1));
+  }
 }

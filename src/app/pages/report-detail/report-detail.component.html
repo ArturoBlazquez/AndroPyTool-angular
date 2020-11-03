@@ -4,18 +4,78 @@
   <mat-card-header>
     <div class="report-header-image" mat-card-avatar></div>
     <mat-card-title>{{report.Filename}}</mat-card-title>
-    <mat-card-subtitle>md5: {{report.md5}}</mat-card-subtitle>
-    <button class="firstButton" color="primary" mat-raised-button>Download report
+    <mat-card-subtitle><b>md5:</b> {{report.md5}}</mat-card-subtitle>
+    <button class="firstButton" color="primary" mat-raised-button>Descargar análisis
       <mat-icon>get_app</mat-icon>
     </button>
-    <button mat-raised-button>Download apk
+    <button mat-raised-button>Descargar apk
       <mat-icon>get_app</mat-icon>
     </button>
   </mat-card-header>
   <mat-card-content>
-    <p>sha1: {{report.sha1}}</p>
-    <p>sha256: {{report.sha256}}</p>
+    <p><b>sha1:</b> {{report.sha1}}</p>
+    <p><b>sha256:</b> {{report.sha256}}</p>
   </mat-card-content>
+
+  <mat-tab-group dynamicHeight>
+    <mat-tab label="Análisis estático">
+      <div class="cards-container">
+        <mat-accordion multi>
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                FlowDroid
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <pre>{{flowDroid | json}}</pre>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                AndroPyTool
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <pre>{{androPyTool | json}}</pre>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Análisis dinámico">
+      <div class="cards-container">
+        <mat-accordion multi>
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                DroidBox
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <pre>{{droidBox | json}}</pre>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Strace
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <pre>{{strace}}</pre>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Análisis de VirusTotal">
+      <mat-card>
+        <a href="{{virusTotal}}">{{virusTotal}}</a>
+      </mat-card>
+    </mat-tab>
+  </mat-tab-group>
 </mat-card>
 
 <mat-card *ngIf="show404" class="error404">
