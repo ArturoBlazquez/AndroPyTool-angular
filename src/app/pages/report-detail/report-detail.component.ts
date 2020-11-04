@@ -45,11 +45,11 @@ export class ReportDetailComponent implements OnInit {
     );
   }
 
-  public isBigScreen(): boolean {
+  isBigScreen(): boolean {
     return window.innerWidth > 620;
   }
 
-  private suscribeToAnalyses(): void {
+  suscribeToAnalyses(): void {
     this.reportService.getFlowDroid(this.reportId).pipe(take(1)).subscribe(
       report => {
         this.flowDroid = report;

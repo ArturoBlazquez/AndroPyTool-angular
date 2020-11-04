@@ -1,0 +1,53 @@
+.main-form {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 720px;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+
+  .main-upload {
+    margin: 20px auto;
+    width: 90%;
+    height: auto;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: none;
+    display: block;
+
+  }
+
+  mat-icon {
+    font-size: 100px;
+    margin-right: 80px;
+  }
+
+  .upload-label {
+    color: black;
+    font-size: 24px;
+  }
+
+  ngx-dropzone-preview {
+    margin: 0 auto !important;
+    word-break: break-all;
+  }
+
+  mat-form-field {
+    margin: 0 auto;
+    display: block;
+    width: 94%;
+  }
+
+  button {
+    display: block;
+    margin: 20px auto;
+  }
+}
+
+mat-card {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 720px;
+}

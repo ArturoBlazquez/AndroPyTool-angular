@@ -5,8 +5,8 @@
     <div class="report-header-image" mat-card-avatar></div>
     <mat-card-title>{{report.Filename}}</mat-card-title>
     <mat-card-subtitle><b>md5:</b> {{report.md5}}</mat-card-subtitle>
-    <div class="downloadButtons">
-      <button class="firstButton" color="primary" mat-raised-button>
+    <div class="download-buttons">
+      <button class="first-button" color="primary" mat-raised-button>
         Descargar análisis
         <mat-icon>get_app</mat-icon>
       </button>
@@ -17,8 +17,8 @@
     </div>
   </mat-card-header>
 
-  <div class="downloadButtonsMobile">
-    <button class="firstButton" color="primary" mat-raised-button>
+  <div class="download-buttons-mobile">
+    <button class="first-button" color="primary" mat-raised-button>
       Descargar análisis
       <mat-icon>get_app</mat-icon>
     </button>
@@ -94,7 +94,7 @@
   </mat-tab-group>
 </mat-card>
 
-<mat-card *ngIf="show404" class="error404">
+<mat-card *ngIf="show404" class="error-404">
   <mat-card-header>
     <mat-card-title>
       <mat-icon>search_off</mat-icon>
@@ -104,7 +104,7 @@
   </mat-card-header>
 </mat-card>
 
-<mat-card *ngIf="showInvalid" class="errorInvalid">
+<mat-card *ngIf="showInvalid" class="error-invalid">
   <mat-card-header>
     <mat-card-title>
       <mat-icon>report_off</mat-icon>
