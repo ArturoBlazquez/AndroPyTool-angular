@@ -6,7 +6,7 @@
     <mat-card-title>{{report.Filename}}</mat-card-title>
     <mat-card-subtitle><b>md5:</b> {{report.md5}}</mat-card-subtitle>
     <div class="download-buttons">
-      <button class="first-button" color="primary" mat-raised-button>
+      <button class="first-button" color="primary" mat-raised-button (click)="downloadAnalysis()">
         Descargar análisis
         <mat-icon>get_app</mat-icon>
       </button>
@@ -18,7 +18,7 @@
   </mat-card-header>
 
   <div class="download-buttons-mobile">
-    <button class="first-button" color="primary" mat-raised-button>
+    <button class="first-button" color="primary" mat-raised-button (click)="downloadAnalysis()">
       Descargar análisis
       <mat-icon>get_app</mat-icon>
     </button>

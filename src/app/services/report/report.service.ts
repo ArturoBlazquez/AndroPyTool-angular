@@ -65,4 +65,9 @@ export class ReportService {
     return this.httpClient.get(environment.restApiUrl + 'reports/' + id + '/virustotal', {responseType: 'text'})
       .pipe(retry(1));
   }
+
+  public getCompleteReport(id: string): Observable<any> {
+    return this.httpClient.get(environment.restApiUrl + 'reports/' + id + '/complete')
+      .pipe(retry(1));
+  }
 }
