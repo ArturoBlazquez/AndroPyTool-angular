@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {NgxDropzoneChangeEvent} from 'ngx-dropzone';
 import {RejectedFile} from 'ngx-dropzone/lib/ngx-dropzone.service';
+import {FileService} from '../../services/file/file.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-upload',
@@ -14,7 +16,11 @@ export class UploadComponent implements OnInit {
 
   virusTotalAPIKey = '';
 
-  constructor(private snackBar: MatSnackBar) {
+  constructor(
+    private snackBar: MatSnackBar,
+    private readonly fileService: FileService,
+    private readonly router: Router
+  ) {
   }
 
   ngOnInit(): void {
@@ -63,5 +69,25 @@ export class UploadComponent implements OnInit {
 
   uploadedWrongType(event: NgxDropzoneChangeEvent): boolean {
     return event.rejectedFiles.some((file: RejectedFile) => file.reason === 'type');
+  }
+
+  uploadFile(): void {
+    this.fileService.postFile(this.file, this.virusTotalAPIKey).subscribe(
+      response => {
+        console.log(response);
+        if (response.status === 200) {
+          this.router.navigate(['/' + response.body.resource_uri]);
+        } else if (response.status === 202) {
+          this.snackBar.open('Se está analizando la aplicación. Tardará unos minutos', 'Cerrar', {
+            duration: 5000,
+          });
+        }
+      },
+      error => {
+        this.snackBar.open(JSON.stringify(error.error), 'Cerrar', {
+          duration: 5000,
+        });
+      }
+    );
   }
 }

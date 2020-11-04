@@ -27,7 +27,7 @@
     </button>
   </mat-form-field>
 
-  <button [disabled]="!file" class="first-button" color="primary" mat-raised-button type="submit">
+  <button [disabled]="!file" class="upload-button" color="primary" mat-raised-button type="submit" (click)="uploadFile()">
     Analizar aplicación
   </button>
 </form>

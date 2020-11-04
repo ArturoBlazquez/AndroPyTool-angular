@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Report} from '../../models/Report';
-import {ReportService} from '../../services/report.service';
+import {ReportService} from '../../services/report/report.service';
 import {take} from 'rxjs/operators';
 
 @Component({

@@ -35,12 +35,11 @@
   }
 
   mat-form-field {
-    margin: 0 auto;
-    display: block;
     width: 94%;
+    margin-left: 20px;
   }
 
-  button {
+  .upload-button {
     display: block;
     margin: 20px auto;
   }
