@@ -15,9 +15,6 @@ export class ReportDetailComponent implements OnInit {
   show404 = false;
   showInvalid = false;
 
-  firstPanelOpen = true;
-  secondPanelOpen = true;
-
   flowDroid: any;
   androPyTool: any;
   droidBox: any;
@@ -46,6 +43,10 @@ export class ReportDetailComponent implements OnInit {
         }
       }
     );
+  }
+
+  public isBigScreen(): boolean {
+    return window.innerWidth > 620;
   }
 
   private suscribeToAnalyses(): void {
