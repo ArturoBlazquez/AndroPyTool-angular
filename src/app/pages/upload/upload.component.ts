@@ -5,6 +5,7 @@ import {RejectedFile} from 'ngx-dropzone/lib/ngx-dropzone.service';
 import {FileService} from '../../services/file/file.service';
 import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
+import {finalize} from 'rxjs/operators';
 
 @Component({
   selector: 'app-upload',
@@ -13,9 +14,11 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class UploadComponent implements OnInit, AfterViewInit {
   file: File = null;
-  maxFileSize = 20 * 1024 * 1024;
+  maxFileSize = 32 * 1024 * 1024;
 
   virusTotalAPIKey = '';
+
+  analyzingApk = false;
 
   constructor(
     private snackBar: MatSnackBar,
@@ -77,19 +80,16 @@ export class UploadComponent implements OnInit, AfterViewInit {
   }
 
   uploadFile(): void {
-    this.fileService.postFile(this.file, this.virusTotalAPIKey).subscribe(
+    this.analyzingApk = true;
+
+    this.fileService.postFile(this.file, this.virusTotalAPIKey).pipe(
+      finalize(() => this.analyzingApk = false)
+    ).subscribe(
       response => {
-        console.log(response);
-        if (response.status === 200) {
-          this.router.navigate(['/' + response.body.resource_uri]);
-        } else if (response.status === 202) {
-          this.snackBar.open('Se está analizando la aplicación. Tardará unos minutos', 'Cerrar', {
-            duration: 5000,
-          });
-        }
+        this.router.navigate(['/' + response.body.resource_uri]);
       },
       error => {
-        this.snackBar.open(JSON.stringify(error.error), 'Cerrar', {
+        this.snackBar.open(JSON.stringify(error.error), this.translate.instant('close'), {
           duration: 5000,
         });
       }

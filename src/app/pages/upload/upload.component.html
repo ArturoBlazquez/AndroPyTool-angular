@@ -1,4 +1,4 @@
-<form class="main-form mat-card">
+<form *ngIf="!analyzingApk" class="main-form mat-card">
   <ngx-dropzone
     (change)="addFile($event)"
     [accept]="'.apk'"
@@ -11,7 +11,7 @@
     <div *ngIf="file == null">
       <mat-icon>cloud_upload</mat-icon>
       <p class="upload-label">{{'upload.label' | translate}}</p>
-      <p class="upload-hint"><b>{{'upload.hint.1' | translate}}</b> 20MB</p>
+      <p class="upload-hint"><b>{{'upload.hint.1' | translate}}</b> 32MB</p>
       <p class="upload-hint"><b>{{'upload.hint.2' | translate}}</b> .apk</p>
     </div>
     <ngx-dropzone-preview (removed)="removeFile()" *ngIf="file != null" [removable]="true">
@@ -33,6 +33,12 @@
     {{'analyze.application' | translate}}
   </button>
 </form>
+
+<div *ngIf="analyzingApk" class="analyzing-apk mat-card">
+  <mat-spinner></mat-spinner>
+  <p>{{'analyzing.apk' | translate}}</p>
+  <p>{{'you.have.to.wait.sorry' | translate}}</p>
+</div>
 
 <mat-divider></mat-divider>
 
