@@ -7,11 +7,11 @@
     <mat-card-subtitle><b>md5:</b> {{report.md5}}</mat-card-subtitle>
     <div class="download-buttons">
       <button class="first-button" color="primary" mat-raised-button (click)="downloadAnalysis()">
-        Descargar análisis
+        {{'download.report' | translate}}
         <mat-icon>get_app</mat-icon>
       </button>
       <button mat-raised-button>
-        Descargar apk
+        {{'download.apk' | translate}}
         <mat-icon>get_app</mat-icon>
       </button>
     </div>
@@ -19,11 +19,11 @@
 
   <div class="download-buttons-mobile">
     <button class="first-button" color="primary" mat-raised-button (click)="downloadAnalysis()">
-      Descargar análisis
+      {{'download.report' | translate}}
       <mat-icon>get_app</mat-icon>
     </button>
     <button mat-raised-button>
-      Descargar apk
+      {{'download.apk' | translate}}
       <mat-icon>get_app</mat-icon>
     </button>
   </div>
@@ -34,7 +34,7 @@
   </mat-card-content>
 
   <mat-tab-group dynamicHeight>
-    <mat-tab label="Análisis estático">
+    <mat-tab label="{{'static.analysis' | translate}}">
       <div class="cards-container">
         <mat-accordion multi>
           <mat-expansion-panel [expanded]="isBigScreen()">
@@ -60,7 +60,7 @@
       </div>
     </mat-tab>
 
-    <mat-tab label="Análisis dinámico">
+    <mat-tab label="{{'dynamic.analysis' | translate}}">
       <div class="cards-container">
         <mat-accordion multi>
           <mat-expansion-panel [expanded]="isBigScreen()">
@@ -86,7 +86,7 @@
       </div>
     </mat-tab>
 
-    <mat-tab label="Análisis de VirusTotal">
+    <mat-tab label="{{'virusTotal.analysis' | translate}}">
       <mat-card>
         <a href="{{virusTotal}}">{{virusTotal}}</a>
       </mat-card>
@@ -100,7 +100,7 @@
       <mat-icon>search_off</mat-icon>
       <span>404</span>
     </mat-card-title>
-    <mat-card-subtitle>No se ha generado un informe de la aplicación con sha256 {{reportId}}</mat-card-subtitle>
+    <mat-card-subtitle>{{'error.404 | translate'}} {{reportId}}</mat-card-subtitle>
   </mat-card-header>
 </mat-card>
 
@@ -109,6 +109,6 @@
     <mat-card-title>
       <mat-icon>report_off</mat-icon>
     </mat-card-title>
-    <mat-card-subtitle>La aplicación análizada no es un apk válido</mat-card-subtitle>
+    <mat-card-subtitle>{{'error.invalid | translate'}}</mat-card-subtitle>
   </mat-card-header>
 </mat-card>

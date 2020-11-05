@@ -11,6 +11,14 @@
       AndroPyTool
     </h1>
   </a>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>language</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" xPosition="before">
+    <button mat-menu-item (click)="switchLang('es')">Español</button>
+    <button mat-menu-item (click)="switchLang('en')">English</button>
+  </mat-menu>
 </mat-toolbar>
 
 

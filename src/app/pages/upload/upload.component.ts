@@ -4,6 +4,7 @@ import {NgxDropzoneChangeEvent} from 'ngx-dropzone';
 import {RejectedFile} from 'ngx-dropzone/lib/ngx-dropzone.service';
 import {FileService} from '../../services/file/file.service';
 import {Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-upload',
@@ -19,7 +20,8 @@ export class UploadComponent implements OnInit, AfterViewInit {
   constructor(
     private snackBar: MatSnackBar,
     private readonly fileService: FileService,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly translate: TranslateService
   ) {
   }
 
@@ -32,23 +34,22 @@ export class UploadComponent implements OnInit, AfterViewInit {
 
   addFile(event: NgxDropzoneChangeEvent): void {
     let addFile = true;
-
     if (this.file != null || this.draggedMoreThanOneFile(event)) {
-      this.snackBar.open('No se puede subir más de un archivo', 'Cerrar', {
+      this.snackBar.open(this.translate.instant('only.one.file'), this.translate.instant('close'), {
         duration: 5000,
       });
       addFile = false;
     }
 
     if (this.uploadedOverSizedFile(event)) {
-      this.snackBar.open('No se puede subir un archivo de más de 20MB', 'Cerrar', {
+      this.snackBar.open(this.translate.instant('oversized.file'), this.translate.instant('close'), {
         duration: 5000,
       });
       addFile = false;
     }
 
     if (this.uploadedWrongType(event)) {
-      this.snackBar.open('El único formato de archivo permitido es .apk', 'Cerrar', {
+      this.snackBar.open(this.translate.instant('apk.file'), this.translate.instant('close'), {
         duration: 5000,
       });
       addFile = false;
