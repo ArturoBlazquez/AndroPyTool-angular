@@ -4,5 +4,12 @@ mat-card {
   word-break: break-all;
   width: calc(100% - 60px);
   cursor: pointer;
-  outline: none;
+}
+
+a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }

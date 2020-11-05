@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 
 @Component({
@@ -11,5 +11,15 @@ export class AppComponent {
     private readonly titleService: Title
   ) {
     titleService.setTitle('AndroPyTool');
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  onKeyDown(event): void {
+    document.getElementsByTagName('body')[0].classList.remove('usingMouse');
+  }
+
+  @HostListener('window:mousedown', ['$event'])
+  onMouseDown(event): void {
+    document.getElementsByTagName('body')[0].classList.add('usingMouse');
   }
 }

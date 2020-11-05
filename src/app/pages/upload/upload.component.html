@@ -6,6 +6,7 @@
     [maxFileSize]="maxFileSize"
     [multiple]="false"
     class="main-upload mat-card"
+    tabindex="0"
   >
     <div *ngIf="file == null">
       <mat-icon>cloud_upload</mat-icon>
@@ -27,7 +28,8 @@
     </button>
   </mat-form-field>
 
-  <button [disabled]="!file" class="upload-button" color="primary" mat-raised-button type="submit" (click)="uploadFile()">
+  <button (click)="uploadFile()" [disabled]="!file" class="upload-button" color="primary" mat-raised-button
+          type="submit">
     Analizar aplicación
   </button>
 </form>

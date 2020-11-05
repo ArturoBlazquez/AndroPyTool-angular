@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {NgxDropzoneChangeEvent} from 'ngx-dropzone';
 import {RejectedFile} from 'ngx-dropzone/lib/ngx-dropzone.service';
@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.scss']
 })
-export class UploadComponent implements OnInit {
+export class UploadComponent implements OnInit, AfterViewInit {
   file: File = null;
   maxFileSize = 20 * 1024 * 1024;
 
@@ -24,6 +24,10 @@ export class UploadComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+    document.getElementsByTagName('ngx-dropzone')[0].getElementsByTagName('input')[0].tabIndex = -1;
   }
 
   addFile(event: NgxDropzoneChangeEvent): void {

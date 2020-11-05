@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -12,4 +13,8 @@ body {
   background-image: url('assets/apk.svg');
   background-size: cover;
   border: solid #84dcf0 2px;
+}
+
+body.usingMouse *:focus {
+  outline: none;
 }

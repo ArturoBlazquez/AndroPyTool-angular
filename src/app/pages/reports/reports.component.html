@@ -1,7 +1,8 @@
 <div class="cards-container">
-  <mat-card *ngFor="let report of reports" routerLink="/{{report.resource_uri}}">
+  <mat-card *ngFor="let report of reports">
+    <a routerLink="/{{report.resource_uri}}"></a>
     <mat-card-header>
-      <div mat-card-avatar class="report-header-image"></div>
+      <div class="report-header-image" mat-card-avatar></div>
       <mat-card-title>{{report.Filename}}</mat-card-title>
       <mat-card-subtitle>md5: {{report.md5}}</mat-card-subtitle>
     </mat-card-header>
