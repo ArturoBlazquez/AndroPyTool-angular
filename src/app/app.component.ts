@@ -1,5 +1,4 @@
 import {Component, HostListener} from '@angular/core';
-import {Title} from '@angular/platform-browser';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
@@ -9,11 +8,8 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class AppComponent {
   constructor(
-    private readonly titleService: Title,
     public translate: TranslateService
   ) {
-    titleService.setTitle('AndroPyTool');
-
     translate.addLangs(['en', 'es']);
     translate.setDefaultLang('es');
   }

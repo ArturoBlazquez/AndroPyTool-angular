@@ -17,5 +17,7 @@
   "apk.file": "Required file format is .apk",
   "close": "Close",
   "analyzing.apk": "Analyzing apk...",
-  "you.have.to.wait.sorry": "This process can take a few minutes. When finished you will be automatically redirected to the report."
+  "you.have.to.wait.sorry": "This process can take a few minutes. When finished you will be automatically redirected to the report.",
+  "title.list": "All reports",
+  "title.report": "Report"
 }

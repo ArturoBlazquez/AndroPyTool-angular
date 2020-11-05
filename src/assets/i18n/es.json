@@ -17,5 +17,7 @@
   "apk.file": "El único formato de archivo permitido es .apk",
   "close": "Cerrar",
   "analyzing.apk": "Analizando la aplicación...",
-  "you.have.to.wait.sorry": "Este proceso puede tardar varios minutos. Al terminar se te redirigirá automáticamente al informe generado."
+  "you.have.to.wait.sorry": "Este proceso puede tardar varios minutos. Al terminar se te redirigirá automáticamente al informe generado.",
+  "title.list": "Todos los informes",
+  "title.report": "Informe"
 }

@@ -6,6 +6,7 @@ import {FileService} from '../../services/file/file.service';
 import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
 import {finalize} from 'rxjs/operators';
+import {MyTitleService} from '../../services/title/my-title.service';
 
 @Component({
   selector: 'app-upload',
@@ -21,11 +22,13 @@ export class UploadComponent implements OnInit, AfterViewInit {
   analyzingApk = false;
 
   constructor(
-    private snackBar: MatSnackBar,
+    private readonly snackBar: MatSnackBar,
     private readonly fileService: FileService,
     private readonly router: Router,
-    private readonly translate: TranslateService
+    private readonly translate: TranslateService,
+    private readonly title: MyTitleService
   ) {
+    this.title.setTitle();
   }
 
   ngOnInit(): void {

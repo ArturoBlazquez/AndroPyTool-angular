@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ReportService} from '../../services/report/report.service';
 import {Report} from '../../models/Report';
+import {MyTitleService} from '../../services/title/my-title.service';
 
 @Component({
   selector: 'app-reports',
@@ -11,8 +12,10 @@ export class ReportsComponent implements OnInit {
   reports: Report[];
 
   constructor(
-    private readonly reportService: ReportService
+    private readonly reportService: ReportService,
+    private readonly title: MyTitleService
   ) {
+    this.title.setTitle('title.list');
   }
 
   ngOnInit(): void {

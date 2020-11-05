@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Report} from '../../models/Report';
 import {ReportService} from '../../services/report/report.service';
 import {take} from 'rxjs/operators';
+import {MyTitleService} from '../../services/title/my-title.service';
 
 @Component({
   selector: 'app-report-detail',
@@ -23,8 +24,10 @@ export class ReportDetailComponent implements OnInit {
 
   constructor(
     private readonly route: ActivatedRoute,
-    private readonly reportService: ReportService
+    private readonly reportService: ReportService,
+    private readonly title: MyTitleService
   ) {
+    this.title.setTitle('title.report');
   }
 
   ngOnInit(): void {
