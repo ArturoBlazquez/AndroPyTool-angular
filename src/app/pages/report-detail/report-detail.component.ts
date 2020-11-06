@@ -15,6 +15,7 @@ export class ReportDetailComponent implements OnInit {
   report: Report;
   show404 = false;
   showInvalid = false;
+  showCorrupt = false;
 
   flowDroid: any;
   androPyTool: any;
@@ -43,6 +44,8 @@ export class ReportDetailComponent implements OnInit {
           this.show404 = true;
         } else if (error.status === 200) {
           this.showInvalid = true;
+        } else if (error.status === 500) {
+          this.showCorrupt = true;
         }
       }
     );

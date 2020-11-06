@@ -6,7 +6,7 @@
     <mat-card-title>{{report.Filename}}</mat-card-title>
     <mat-card-subtitle><b>md5:</b> {{report.md5}}</mat-card-subtitle>
     <div class="download-buttons">
-      <button class="first-button" color="primary" mat-raised-button (click)="downloadAnalysis()">
+      <button (click)="downloadAnalysis()" class="first-button" color="primary" mat-raised-button>
         {{'download.report' | translate}}
         <mat-icon>get_app</mat-icon>
       </button>
@@ -18,7 +18,7 @@
   </mat-card-header>
 
   <div class="download-buttons-mobile">
-    <button class="first-button" color="primary" mat-raised-button (click)="downloadAnalysis()">
+    <button (click)="downloadAnalysis()" class="first-button" color="primary" mat-raised-button>
       {{'download.report' | translate}}
       <mat-icon>get_app</mat-icon>
     </button>
@@ -61,29 +61,36 @@
     </mat-tab>
 
     <mat-tab label="{{'dynamic.analysis' | translate}}">
-      <div class="cards-container">
-        <mat-accordion multi>
-          <mat-expansion-panel [expanded]="isBigScreen()">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                DroidBox
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <pre>{{droidBox | json}}</pre>
-          </mat-expansion-panel>
-        </mat-accordion>
+      <ng-template matTabContent>
+        <div class="cards-container">
+          <mat-accordion multi>
+            <mat-expansion-panel [expanded]="isBigScreen()">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  DroidBox
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <pre>{{droidBox | json}}</pre>
+            </mat-expansion-panel>
+          </mat-accordion>
 
-        <mat-accordion>
-          <mat-expansion-panel [expanded]="isBigScreen()">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                Strace
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <pre>{{strace}}</pre>
-          </mat-expansion-panel>
-        </mat-accordion>
-      </div>
+          <mat-accordion>
+            <mat-expansion-panel [expanded]="false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Strace
+                </mat-panel-title>
+                <mat-panel-description>
+                  * {{'report.big' | translate}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <ng-template matExpansionPanelContent>
+                <pre>{{strace}}</pre>
+              </ng-template>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </ng-template>
     </mat-tab>
 
     <mat-tab label="{{'virusTotal.analysis' | translate}}">
@@ -110,5 +117,14 @@
       <mat-icon>report_off</mat-icon>
     </mat-card-title>
     <mat-card-subtitle>{{'error.invalid' | translate}}</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
+
+<mat-card *ngIf="showCorrupt" class="error-invalid">
+  <mat-card-header>
+    <mat-card-title>
+      <mat-spinner></mat-spinner>
+    </mat-card-title>
+    <mat-card-subtitle>{{'error.corrupt' | translate}}</mat-card-subtitle>
   </mat-card-header>
 </mat-card>

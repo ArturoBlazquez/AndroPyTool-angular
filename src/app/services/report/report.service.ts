@@ -28,7 +28,7 @@ export class ReportService {
     return this.httpClient.get<Report>(environment.restApiUrl + 'reports/' + id).pipe(
       retry(1),
       catchError(error => {
-        if (error.status === 404) {
+        if (error.status === 404 || error.status === 500) {
           console.log(error);
           return throwError(error);
         }
