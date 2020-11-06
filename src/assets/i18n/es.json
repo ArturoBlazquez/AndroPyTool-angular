@@ -5,6 +5,7 @@
   "optional": "Opcional",
   "analyze.application": "Analizar aplicación",
   "see.all.reports": "Ver todos los informes generados",
+  "invalid.apk": "Esta aplicación es inválida",
   "download.report": "Descargar análisis",
   "download.apk": "Descargar apk",
   "static.analysis": "Análisis estático",

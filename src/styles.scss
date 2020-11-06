@@ -15,6 +15,12 @@ body {
   border: solid #84dcf0 2px;
 }
 
+.report-header-image-invalid {
+  background-image: url('assets/apk-red.svg');
+  background-size: cover;
+  border: solid #D61A3C 2px;
+}
+
 body.usingMouse *:focus {
   outline: none;
 }

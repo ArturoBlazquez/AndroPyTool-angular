@@ -5,6 +5,7 @@
   "optional": "Optional",
   "analyze.application": "Analise application",
   "see.all.reports": "See all generated reports",
+  "invalid.apk": "This application is invalid",
   "download.report": "Download report",
   "download.apk": "Download apk",
   "static.analysis": "Static analysis",

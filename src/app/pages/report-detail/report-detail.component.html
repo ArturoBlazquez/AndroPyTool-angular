@@ -101,7 +101,7 @@
   </mat-tab-group>
 </mat-card>
 
-<mat-card *ngIf="show404" class="error-404">
+<mat-card *ngIf="show404" class="error">
   <mat-card-header>
     <mat-card-title>
       <mat-icon>search_off</mat-icon>
@@ -111,16 +111,21 @@
   </mat-card-header>
 </mat-card>
 
-<mat-card *ngIf="showInvalid" class="error-invalid">
+<mat-card *ngIf="showInvalid" class="error">
   <mat-card-header>
-    <mat-card-title>
-      <mat-icon>report_off</mat-icon>
+    <mat-card-title class="withSvgIcon">
+      <img
+        aria-hidden="true"
+        alt="invalid apk icon"
+        height="150px"
+        src="assets/apk-red.svg"
+      />
     </mat-card-title>
     <mat-card-subtitle>{{'error.invalid' | translate}}</mat-card-subtitle>
   </mat-card-header>
 </mat-card>
 
-<mat-card *ngIf="showCorrupt" class="error-invalid">
+<mat-card *ngIf="showCorrupt" class="error">
   <mat-card-header>
     <mat-card-title>
       <mat-spinner></mat-spinner>
