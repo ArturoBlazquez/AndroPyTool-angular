@@ -66,5 +66,5 @@ export class AppModule {
 }
 
 export function httpTranslateLoader(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/');
 }
