@@ -8,6 +8,7 @@ const routes: Routes = [
   {path: '', component: UploadComponent},
   {path: 'reports', component: ReportsComponent},
   {path: 'reports/:reportId', component: ReportDetailComponent},
+  { path: '**', component: UploadComponent },  // Wildcard route for a 404 page
 ];
 
 
