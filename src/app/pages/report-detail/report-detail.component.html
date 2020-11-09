@@ -75,8 +75,8 @@
           </mat-accordion>
 
           <mat-accordion>
-            <mat-expansion-panel [expanded]="false">
-              <mat-expansion-panel-header>
+            <mat-expansion-panel [expanded]="false" collapsedHeight="*" expandedHeight="*">
+              <mat-expansion-panel-header class="strace-header">
                 <mat-panel-title>
                   Strace
                 </mat-panel-title>
@@ -115,8 +115,8 @@
   <mat-card-header>
     <mat-card-title class="withSvgIcon">
       <img
-        aria-hidden="true"
         alt="invalid apk icon"
+        aria-hidden="true"
         height="150px"
         src="assets/apk-red.svg"
       />

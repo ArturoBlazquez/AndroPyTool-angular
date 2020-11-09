@@ -37,6 +37,16 @@ mat-card-header {
 
     mat-expansion-panel-header {
       word-break: normal;
+
+      &.strace-header {
+        height: auto !important;
+        min-height: 48px;
+
+        mat-panel-title {
+          margin-bottom: auto;
+          margin-top: auto;
+        }
+      }
     }
 
     pre {
@@ -63,7 +73,7 @@ mat-tab-group mat-card {
     font-size: 100px;
     margin-bottom: 100px;
 
-    &.withSvgIcon{
+    &.withSvgIcon {
       margin-bottom: 30px;
     }
 
