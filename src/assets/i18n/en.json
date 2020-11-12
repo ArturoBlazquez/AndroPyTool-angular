@@ -9,6 +9,9 @@
     "only.one.file": "Only one file can be uploaded",
     "oversized.file": "Maximum file size is 32MB",
     "apk.file": "Required file format is .apk",
+    "apk": "Upload application",
+    "search.sha256": "Search by hash",
+    "file.sha256": "Application sha256",
     "see.all.reports": "See all generated reports"
   },
   "allReports": {
@@ -31,5 +34,6 @@
   "go.back": "Go back to previous page",
   "language.menu": "Language selector",
   "optional": "Optional",
+  "search": "Search",
   "close": "Close"
 }

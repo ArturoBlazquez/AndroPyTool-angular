@@ -16,10 +16,10 @@ import {MyTitleService} from '../../services/title/my-title.service';
 export class UploadComponent implements OnInit, AfterViewInit {
   file: File = null;
   maxFileSize = 32 * 1024 * 1024;
-
   virusTotalAPIKey = '';
-
   analyzingApk = false;
+
+  sha256 = '';
 
   constructor(
     private readonly snackBar: MatSnackBar,
@@ -97,5 +97,11 @@ export class UploadComponent implements OnInit, AfterViewInit {
         });
       }
     );
+  }
+
+  searchBySha() {
+    if (this.sha256 !== '') {
+      this.router.navigate(['/reports/' + this.sha256]);
+    }
   }
 }

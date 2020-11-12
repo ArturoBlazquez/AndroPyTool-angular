@@ -59,21 +59,26 @@ mat-tab-group mat-card {
 
   mat-card-title {
     font-size: 100px;
-    margin-bottom: 100px;
 
     &.withSvgIcon {
       margin-bottom: 30px;
     }
 
     mat-icon {
-      font-size: 100px;
-      margin-top: 20px;
-      margin-right: 100px;
+      color: #84dcf0;
+      font-size: 120px;
+      height: 120px;
+      width: 120px;
+      margin: 0 auto;
     }
   }
 
   mat-card-title, mat-card-subtitle {
     width: 100%;
+  }
+
+  mat-spinner {
+    margin-bottom: 50px;
   }
 }
 

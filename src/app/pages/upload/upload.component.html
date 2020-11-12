@@ -1,37 +1,49 @@
 <form *ngIf="!analyzingApk" class="main-form mat-card">
-  <ngx-dropzone
-    (change)="addFile($event)"
-    [accept]="'.apk'"
-    [disableClick]="file != null"
-    [maxFileSize]="maxFileSize"
-    [multiple]="false"
-    class="main-upload mat-card"
-    tabindex="0"
-  >
-    <div *ngIf="file == null">
-      <mat-icon>cloud_upload</mat-icon>
-      <p class="upload-label">{{'upload.label' | translate}}</p>
-      <p class="upload-hint"><b>{{'upload.hint.1' | translate}}</b> 32MB</p>
-      <p class="upload-hint"><b>{{'upload.hint.2' | translate}}</b> .apk</p>
-    </div>
-    <ngx-dropzone-preview (removed)="removeFile()" *ngIf="file != null" [removable]="true">
-      <ngx-dropzone-label>{{ file.name }}</ngx-dropzone-label>
-    </ngx-dropzone-preview>
-  </ngx-dropzone>
+  <mat-tab-group>
+    <mat-tab label="{{'upload.apk' | translate}}">
+      <ngx-dropzone
+        (change)="addFile($event)"
+        [accept]="'.apk'"
+        [disableClick]="file != null"
+        [maxFileSize]="maxFileSize"
+        [multiple]="false"
+        class="main-upload mat-card"
+        tabindex="0"
+      >
+        <div *ngIf="file == null">
+          <mat-icon>cloud_upload</mat-icon>
+          <p class="upload-label">{{'upload.label' | translate}}</p>
+          <p class="upload-hint"><b>{{'upload.hint.1' | translate}}</b> 32MB</p>
+          <p class="upload-hint"><b>{{'upload.hint.2' | translate}}</b> .apk</p>
+        </div>
+        <ngx-dropzone-preview (removed)="removeFile()" *ngIf="file != null" [removable]="true">
+          <ngx-dropzone-label>{{ file.name }}</ngx-dropzone-label>
+        </ngx-dropzone-preview>
+      </ngx-dropzone>
 
-  <mat-form-field>
-    <mat-label>VirusTotal API Key ({{'optional' | translate}})</mat-label>
-    <input [(ngModel)]="virusTotalAPIKey" matInput name="virusTotalAPIKey" type="text">
-    <button (click)="virusTotalAPIKey=''" *ngIf="virusTotalAPIKey" aria-label="Clear" mat-button mat-icon-button
-            matSuffix>
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
+      <mat-form-field>
+        <mat-label>VirusTotal API Key ({{'optional' | translate}})</mat-label>
+        <input [(ngModel)]="virusTotalAPIKey" matInput name="virusTotalAPIKey" type="text">
+      </mat-form-field>
 
-  <button (click)="uploadFile()" [disabled]="!file" class="upload-button" color="primary" mat-raised-button
-          type="submit">
-    {{'upload.analyze.application' | translate}}
-  </button>
+      <button (click)="uploadFile()" [disabled]="!file" class="upload-button" color="primary" mat-raised-button
+              type="submit">
+        {{'upload.analyze.application' | translate}}
+      </button>
+    </mat-tab>
+
+    <mat-tab label="{{'upload.search.sha256' | translate}}">
+        <mat-icon class="search-icon">search</mat-icon>
+      <mat-form-field>
+        <mat-label>{{'upload.file.sha256' | translate}}</mat-label>
+        <input (keyup.enter)="searchBySha()" [(ngModel)]="sha256" matInput name="sha256" type="text">
+      </mat-form-field>
+      <button (click)="searchBySha()" [disabled]="sha256==''" class="upload-button" color="primary" mat-raised-button
+              type="submit">
+        {{'search' | translate}}
+      </button>
+    </mat-tab>
+  </mat-tab-group>
 </form>
 
 <div *ngIf="analyzingApk" class="analyzing-apk mat-card">

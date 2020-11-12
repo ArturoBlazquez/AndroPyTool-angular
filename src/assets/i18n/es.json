@@ -9,6 +9,9 @@
     "only.one.file": "No se puede subir más de un archivo",
     "oversized.file": "No se puede subir un archivo de más de 32MB",
     "apk.file": "El único formato de archivo permitido es .apk",
+    "apk": "Subir una aplicación",
+    "search.sha256": "Buscar por hash",
+    "file.sha256": "Sha256 de la aplicación",
     "see.all.reports": "Ver todos los informes generados"
   },
   "allReports": {
@@ -31,5 +34,6 @@
   "go.back": "Volver a la página anterior",
   "language.menu": "Selector de idiomas",
   "optional": "Opcional",
+  "search": "Buscar",
   "close": "Cerrar"
 }
