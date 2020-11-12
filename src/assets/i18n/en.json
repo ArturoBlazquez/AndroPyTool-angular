@@ -28,6 +28,8 @@
     "error.invalid": "The analyzed application is not a valid apk",
     "error.corrupt": "The application is currently being analyzed"
   },
+  "go.back": "Go back to previous page",
+  "language.menu": "Language selector",
   "optional": "Optional",
   "close": "Close"
 }

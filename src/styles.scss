@@ -9,15 +9,20 @@ body {
 }
 
 
+.report-header-image, .report-header-image-invalid {
+  background-size: cover;
+  margin: auto 0;
+  top: -8px;
+  position: relative;
+}
+
 .report-header-image {
   background-image: url('assets/apk.svg');
-  background-size: cover;
   border: solid #84dcf0 2px;
 }
 
 .report-header-image-invalid {
   background-image: url('assets/apk-red.svg');
-  background-size: cover;
   border: solid #D61A3C 2px;
 }
 

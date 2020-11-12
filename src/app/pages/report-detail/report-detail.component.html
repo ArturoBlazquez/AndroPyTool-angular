@@ -4,15 +4,15 @@
   <mat-card-header>
     <div class="report-header-image" mat-card-avatar></div>
     <mat-card-title>{{report.Filename}}</mat-card-title>
-    <mat-card-subtitle><b>md5:</b> {{report.md5}}</mat-card-subtitle>
+    <mat-card-subtitle><b>sha256:</b> {{report.sha256}}</mat-card-subtitle>
     <app-download-buttons [reportId]="reportId" class="download-buttons"></app-download-buttons>
   </mat-card-header>
 
   <app-download-buttons [reportId]="reportId" class="download-buttons-mobile"></app-download-buttons>
 
   <mat-card-content>
+    <p><b>md5:</b> {{report.md5}}</p>
     <p><b>sha1:</b> {{report.sha1}}</p>
-    <p><b>sha256:</b> {{report.sha256}}</p>
   </mat-card-content>
 
   <mat-tab-group dynamicHeight>
