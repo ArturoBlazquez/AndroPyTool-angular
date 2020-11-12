@@ -30,21 +30,21 @@
 
   <button (click)="uploadFile()" [disabled]="!file" class="upload-button" color="primary" mat-raised-button
           type="submit">
-    {{'analyze.application' | translate}}
+    {{'upload.analyze.application' | translate}}
   </button>
 </form>
 
 <div *ngIf="analyzingApk" class="analyzing-apk mat-card">
   <mat-spinner></mat-spinner>
-  <p>{{'analyzing.apk' | translate}}</p>
-  <p>{{'you.have.to.wait.sorry' | translate}}</p>
+  <p>{{'upload.analyzing.apk' | translate}}</p>
+  <p>{{'upload.you.have.to.wait.sorry' | translate}}</p>
 </div>
 
 <mat-divider></mat-divider>
 
 <mat-card>
   <button class="first-button" color="primary" mat-raised-button routerLink="/reports">
-    {{'see.all.reports' | translate}}
+    {{'upload.see.all.reports' | translate}}
     <mat-icon>arrow_forward</mat-icon>
   </button>
 </mat-card>

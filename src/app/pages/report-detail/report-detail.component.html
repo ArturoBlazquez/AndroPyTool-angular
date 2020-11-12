@@ -16,7 +16,7 @@
   </mat-card-content>
 
   <mat-tab-group dynamicHeight>
-    <mat-tab label="{{'static.analysis' | translate}}">
+    <mat-tab label="{{'report.static.analysis' | translate}}">
       <div class="cards-container">
         <mat-accordion multi>
           <mat-expansion-panel [expanded]="isBigScreen()">
@@ -42,7 +42,7 @@
       </div>
     </mat-tab>
 
-    <mat-tab label="{{'dynamic.analysis' | translate}}">
+    <mat-tab label="{{'report.dynamic.analysis' | translate}}">
       <ng-template matTabContent>
         <div class="cards-container">
           <mat-accordion multi>
@@ -63,7 +63,7 @@
                   Strace
                 </mat-panel-title>
                 <mat-panel-description>
-                  * {{'report.big' | translate}}
+                  * {{'report.report.big' | translate}}
                 </mat-panel-description>
               </mat-expansion-panel-header>
               <ng-template matExpansionPanelContent>
@@ -75,7 +75,7 @@
       </ng-template>
     </mat-tab>
 
-    <mat-tab label="{{'virusTotal.analysis' | translate}}">
+    <mat-tab label="{{'report.virusTotal.analysis' | translate}}">
       <mat-card>
         <a href="{{virusTotal}}">{{virusTotal}}</a>
       </mat-card>
@@ -89,7 +89,7 @@
       <mat-icon>search_off</mat-icon>
       <span>404</span>
     </mat-card-title>
-    <mat-card-subtitle>{{'error.404' | translate}} {{reportId}}</mat-card-subtitle>
+    <mat-card-subtitle>{{'report.error.404' | translate}} {{reportId}}</mat-card-subtitle>
   </mat-card-header>
 </mat-card>
 
@@ -103,7 +103,7 @@
         src="assets/apk-red.svg"
       />
     </mat-card-title>
-    <mat-card-subtitle>{{'error.invalid' | translate}}</mat-card-subtitle>
+    <mat-card-subtitle>{{'report.error.invalid' | translate}}</mat-card-subtitle>
   </mat-card-header>
 </mat-card>
 
@@ -112,6 +112,6 @@
     <mat-card-title>
       <mat-spinner></mat-spinner>
     </mat-card-title>
-    <mat-card-subtitle>{{'error.corrupt' | translate}}</mat-card-subtitle>
+    <mat-card-subtitle>{{'report.error.corrupt' | translate}}</mat-card-subtitle>
   </mat-card-header>
 </mat-card>

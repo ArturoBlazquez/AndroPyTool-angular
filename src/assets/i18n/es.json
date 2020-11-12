@@ -1,27 +1,33 @@
 {
-  "upload.label": "Arrastra un archivo o haz click aquí para subirlo",
-  "upload.hint.1": "Tamaño máximo:",
-  "upload.hint.2": "Formato admitido:",
+  "upload": {
+    "label": "Arrastra un archivo o haz click aquí para subirlo",
+    "hint.1": "Tamaño máximo:",
+    "hint.2": "Formato admitido:",
+    "analyze.application": "Analizar aplicación",
+    "analyzing.apk": "Analizando la aplicación...",
+    "you.have.to.wait.sorry": "Este proceso puede tardar varios minutos. Al terminar se te redirigirá automáticamente al informe generado.",
+    "only.one.file": "No se puede subir más de un archivo",
+    "oversized.file": "No se puede subir un archivo de más de 32MB",
+    "apk.file": "El único formato de archivo permitido es .apk",
+    "see.all.reports": "Ver todos los informes generados"
+  },
+  "allReports": {
+    "title": "Todos los informes",
+    "invalid.apk": "Esta aplicación es inválida"
+  },
+  "report": {
+    "title": "Informe",
+    "download.report": "Descargar análisis",
+    "download.apk": "Descargar apk",
+    "download.apk.tooltip": "No puedes descargar un aplicación si no has iniciado sesión",
+    "static.analysis": "Análisis estático",
+    "dynamic.analysis": "Análisis dinámico",
+    "report.big": "Este informe es muy grande y desplegarlo puede tardar unos segundos",
+    "virusTotal.analysis": "Análisis de VirusTotal",
+    "error.404": "No se ha generado un informe de la aplicación con sha256",
+    "error.invalid": "La aplicación analizada no es un apk válido",
+    "error.corrupt": "La aplicación está siendo analizada"
+  },
   "optional": "Opcional",
-  "analyze.application": "Analizar aplicación",
-  "see.all.reports": "Ver todos los informes generados",
-  "invalid.apk": "Esta aplicación es inválida",
-  "download.report": "Descargar análisis",
-  "download.apk": "Descargar apk",
-  "static.analysis": "Análisis estático",
-  "dynamic.analysis": "Análisis dinámico",
-  "report.big": "Este informe es muy grande y desplegarlo puede tardar unos segundos",
-  "virusTotal.analysis": "Análisis de VirusTotal",
-  "error.404": "No se ha generado un informe de la aplicación con sha256",
-  "error.invalid": "La aplicación analizada no es un apk válido",
-  "error.corrupt": "La aplicación está siendo analizada",
-  "only.one.file": "No se puede subir más de un archivo",
-  "oversized.file": "No se puede subir un archivo de más de 32MB",
-  "apk.file": "El único formato de archivo permitido es .apk",
-  "close": "Cerrar",
-  "analyzing.apk": "Analizando la aplicación...",
-  "you.have.to.wait.sorry": "Este proceso puede tardar varios minutos. Al terminar se te redirigirá automáticamente al informe generado.",
-  "title.list": "Todos los informes",
-  "title.report": "Informe",
-  "download.apk.tooltip": "No puedes descargar un aplicación si no has iniciado sesión"
+  "close": "Cerrar"
 }

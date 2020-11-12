@@ -15,7 +15,7 @@ export class ReportsComponent implements OnInit {
     private readonly reportService: ReportService,
     private readonly title: MyTitleService
   ) {
-    this.title.setTitle('title.list');
+    this.title.setTitle('allReports.title');
   }
 
   ngOnInit(): void {

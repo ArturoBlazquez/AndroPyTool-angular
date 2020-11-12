@@ -41,21 +41,21 @@ export class UploadComponent implements OnInit, AfterViewInit {
   addFile(event: NgxDropzoneChangeEvent): void {
     let addFile = true;
     if (this.file != null || this.draggedMoreThanOneFile(event)) {
-      this.snackBar.open(this.translate.instant('only.one.file'), this.translate.instant('close'), {
+      this.snackBar.open(this.translate.instant('upload.only.one.file'), this.translate.instant('close'), {
         duration: 5000,
       });
       addFile = false;
     }
 
     if (this.uploadedOverSizedFile(event)) {
-      this.snackBar.open(this.translate.instant('oversized.file'), this.translate.instant('close'), {
+      this.snackBar.open(this.translate.instant('upload.oversized.file'), this.translate.instant('close'), {
         duration: 5000,
       });
       addFile = false;
     }
 
     if (this.uploadedWrongType(event)) {
-      this.snackBar.open(this.translate.instant('apk.file'), this.translate.instant('close'), {
+      this.snackBar.open(this.translate.instant('upload.apk.file'), this.translate.instant('close'), {
         duration: 5000,
       });
       addFile = false;

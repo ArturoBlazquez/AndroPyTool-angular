@@ -1,11 +1,11 @@
 <div id="download-buttons">
   <button (click)="downloadAnalysis()" class="first-button" color="primary" mat-raised-button>
-    {{'download.report' | translate}}
+    {{'report.download.report' | translate}}
     <mat-icon>get_app</mat-icon>
   </button>
-  <div [matTooltipDisabled]="false" matTooltip="{{'download.apk.tooltip' | translate}}" class="second-button">
+  <div [matTooltipDisabled]="false" matTooltip="{{'report.download.apk.tooltip' | translate}}" class="second-button">
     <button [disabled]="true" mat-raised-button>
-      {{'download.apk' | translate}}
+      {{'report.download.apk' | translate}}
       <mat-icon>get_app</mat-icon>
     </button>
   </div>
