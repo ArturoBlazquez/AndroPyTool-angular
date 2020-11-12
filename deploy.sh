@@ -27,7 +27,7 @@ docker build -t andro-py-tool-front .
 echo "Running front image..."
 docker run --rm -p 8841:80 -d andro-py-tool-front
 
-if [ "$CONTAINER_PATTERN" == "andro-py-tool-front" ]; then
+if [ "$CONTAINER_PATTERN" == "andro-py" ]; then
   cd ../AndroPyTool
   echo "Updating back..."
   git pull

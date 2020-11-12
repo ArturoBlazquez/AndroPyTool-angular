@@ -1,6 +1,9 @@
 import {Component, HostListener} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {MyTitleService} from './services/title/my-title.service';
+import {UploadComponent} from './pages/upload/upload.component';
+import {ReportsComponent} from './pages/reports/reports.component';
+import {ReportDetailComponent} from './pages/report-detail/report-detail.component';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +11,8 @@ import {MyTitleService} from './services/title/my-title.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  goBackUrl = null;
+
   constructor(
     private readonly translate: TranslateService,
     private readonly title: MyTitleService
@@ -29,6 +34,16 @@ export class AppComponent {
   @HostListener('window:mousedown', ['$event'])
   onMouseDown(event): void {
     document.getElementsByTagName('body')[0].classList.add('usingMouse');
+  }
+
+  updateGoBackUrl(event): void {
+    if (event instanceof UploadComponent) {
+      this.goBackUrl = null;
+    } else if (event instanceof ReportsComponent) {
+      this.goBackUrl = '';
+    } else if (event instanceof ReportDetailComponent) {
+      this.goBackUrl = 'reports';
+    }
   }
 
   switchLang(lang: string): void {

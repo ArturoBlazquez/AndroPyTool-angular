@@ -1,4 +1,7 @@
 <mat-toolbar color="primary">
+  <a *ngIf="goBackUrl != null" href="{{goBackUrl}}" class="go-back-button">
+    <mat-icon>arrow_backward</mat-icon>
+  </a>
   <a class="toolbar-logo" routerLink="/">
     <img
       alt="Logo AndroPyTool"
@@ -22,4 +25,4 @@
 </mat-toolbar>
 
 
-<router-outlet></router-outlet>
+<router-outlet (activate)='updateGoBackUrl($event)'></router-outlet>

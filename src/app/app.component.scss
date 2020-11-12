@@ -7,11 +7,28 @@ a {
   margin: 0 auto;
   text-decoration: none;
   color: black;
+
+  &.go-back-button {
+    display: none;
+  }
 }
 
 
 @media only screen and (max-width: 620px) {
-  .toolbar-logo {
-    position: relative;
+  h1 {
+    display: none;
+  }
+
+  a {
+    margin: 0;
+
+    &.go-back-button{
+    display: block;
+    }
+
+    &.toolbar-logo {
+      margin: 0 auto;
+      position: relative;
+    }
   }
 }
