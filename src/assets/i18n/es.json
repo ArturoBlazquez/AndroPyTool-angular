@@ -22,5 +22,6 @@
   "analyzing.apk": "Analizando la aplicación...",
   "you.have.to.wait.sorry": "Este proceso puede tardar varios minutos. Al terminar se te redirigirá automáticamente al informe generado.",
   "title.list": "Todos los informes",
-  "title.report": "Informe"
+  "title.report": "Informe",
+  "download.apk.tooltip": "No puedes descargar un aplicación si no has iniciado sesión"
 }

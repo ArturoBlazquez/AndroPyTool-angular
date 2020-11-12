@@ -1,0 +1,26 @@
+#download-buttons {
+  min-width: max-content;
+}
+
+button {
+  max-height: 50px;
+}
+
+.first-button {
+  margin-right: 10px;
+}
+
+.second-button {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 620px) {
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .second-button {
+    width: 100%;
+  }
+}

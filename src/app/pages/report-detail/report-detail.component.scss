@@ -1,21 +1,9 @@
-.first-button {
-  margin-right: 10px;
-}
-
 mat-spinner {
   margin: 10px auto;
 }
 
 mat-card {
   word-break: break-all;
-}
-
-mat-card-header {
-  button {
-    max-height: 50px;
-    width: 100%;
-    max-width: fit-content;
-  }
 }
 
 .download-buttons {
@@ -101,11 +89,6 @@ mat-tab-group mat-card {
 
   .download-buttons-mobile {
     display: block;
-
-    button {
-      width: 100%;
-      margin-bottom: 10px;
-    }
   }
 
   .cards-container mat-accordion {

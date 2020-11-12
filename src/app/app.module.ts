@@ -24,13 +24,16 @@ import {FormsModule} from '@angular/forms';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {DownloadButtonsComponent} from './shared/download-buttons/download-buttons.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReportsComponent,
     ReportDetailComponent,
-    UploadComponent
+    UploadComponent,
+    DownloadButtonsComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    MatTooltipModule,
     MatMenuModule
   ],
   providers: [],

@@ -5,28 +5,10 @@
     <div class="report-header-image" mat-card-avatar></div>
     <mat-card-title>{{report.Filename}}</mat-card-title>
     <mat-card-subtitle><b>md5:</b> {{report.md5}}</mat-card-subtitle>
-    <div class="download-buttons">
-      <button (click)="downloadAnalysis()" class="first-button" color="primary" mat-raised-button>
-        {{'download.report' | translate}}
-        <mat-icon>get_app</mat-icon>
-      </button>
-      <button mat-raised-button>
-        {{'download.apk' | translate}}
-        <mat-icon>get_app</mat-icon>
-      </button>
-    </div>
+    <app-download-buttons [reportId]="reportId" class="download-buttons"></app-download-buttons>
   </mat-card-header>
 
-  <div class="download-buttons-mobile">
-    <button (click)="downloadAnalysis()" class="first-button" color="primary" mat-raised-button>
-      {{'download.report' | translate}}
-      <mat-icon>get_app</mat-icon>
-    </button>
-    <button mat-raised-button>
-      {{'download.apk' | translate}}
-      <mat-icon>get_app</mat-icon>
-    </button>
-  </div>
+  <app-download-buttons [reportId]="reportId" class="download-buttons-mobile"></app-download-buttons>
 
   <mat-card-content>
     <p><b>sha1:</b> {{report.sha1}}</p>
