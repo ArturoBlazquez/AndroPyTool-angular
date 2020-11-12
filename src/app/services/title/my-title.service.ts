@@ -6,6 +6,7 @@ import {TranslateService} from '@ngx-translate/core';
   providedIn: 'root'
 })
 export class MyTitleService {
+  currentTitle = '';
 
   constructor(
     private readonly titleService: Title,
@@ -14,10 +15,24 @@ export class MyTitleService {
   }
 
   setTitle(title: string = ''): void {
+    this.currentTitle = title;
+
     if (title === '') {
       this.titleService.setTitle('AndroPyTool');
     } else {
-      this.titleService.setTitle('AndroPyTool - ' + this.translate.instant(title));
+      this.translate.get(title).subscribe(res => {
+        this.titleService.setTitle('AndroPyTool - ' + res);
+      });
+    }
+  }
+
+  reloadTitle(): void {
+    if (this.currentTitle === '') {
+      this.titleService.setTitle('AndroPyTool');
+    } else {
+      this.translate.get(this.currentTitle).subscribe(res => {
+        this.titleService.setTitle('AndroPyTool - ' + res);
+      });
     }
   }
 }

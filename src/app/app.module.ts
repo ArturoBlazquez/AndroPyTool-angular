@@ -41,7 +41,8 @@ import {MatMenuModule} from '@angular/material/menu';
         provide: TranslateLoader,
         useFactory: httpTranslateLoader,
         deps: [HttpClient]
-      }
+      },
+      defaultLanguage: 'es'
     }),
     BrowserAnimationsModule,
     MatToolbarModule,
