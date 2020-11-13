@@ -24,6 +24,7 @@
   },
   "report": {
     "title": "Informe",
+    "analysis.date": "Fecha del análisis",
     "download.report": "Descargar análisis",
     "download.apk": "Descargar apk",
     "download.apk.tooltip": "No puedes descargar un aplicación si no has iniciado sesión",

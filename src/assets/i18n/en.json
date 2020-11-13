@@ -24,6 +24,7 @@
   },
   "report": {
     "title": "Report",
+    "analysis.date": "Analysis date",
     "download.report": "Download report",
     "download.apk": "Download apk",
     "download.apk.tooltip": "You can't download an application if you haven't logged in",

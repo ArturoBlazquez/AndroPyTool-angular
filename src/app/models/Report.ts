@@ -4,4 +4,5 @@ export interface Report {
   resource_uri: string;
   sha1: string;
   sha256: string;
+  analysisDate: Date;
 }

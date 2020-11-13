@@ -13,6 +13,7 @@
   <mat-card-content>
     <p><b>md5:</b> {{report.md5}}</p>
     <p><b>sha1:</b> {{report.sha1}}</p>
+    <p><b>{{'report.analysis.date' | translate}}:</b> {{report.analysisDate | date: 'short'}}</p>
   </mat-card-content>
 
   <mat-tab-group dynamicHeight>

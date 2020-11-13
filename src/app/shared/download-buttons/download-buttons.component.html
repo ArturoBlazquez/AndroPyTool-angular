@@ -3,7 +3,7 @@
     {{'report.download.report' | translate}}
     <mat-icon>get_app</mat-icon>
   </button>
-  <div [matTooltipDisabled]="false" matTooltip="{{'report.download.apk.tooltip' | translate}}" class="second-button">
+  <div *ngIf="false" [matTooltipDisabled]="false" matTooltip="{{'report.download.apk.tooltip' | translate}}" class="second-button">
     <button [disabled]="true" mat-raised-button>
       {{'report.download.apk' | translate}}
       <mat-icon>get_app</mat-icon>
