@@ -25,6 +25,8 @@
     "download.apk.tooltip": "No puedes descargar un aplicación si no has iniciado sesión",
     "static.analysis": "Análisis estático",
     "dynamic.analysis": "Análisis dinámico",
+    "expand.all": "Expandir todos",
+    "collapse.all": "Contraer todos",
     "report.big": "Este informe es muy grande y desplegarlo puede tardar unos segundos",
     "virusTotal.analysis": "Análisis de VirusTotal",
     "error.404": "No se ha generado un informe de la aplicación con sha256",

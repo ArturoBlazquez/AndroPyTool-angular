@@ -1,0 +1,12 @@
+<button (click)="expandAll()" [disabled]="disableExpandAll()" class="expand_button" mat-raised-button>
+  {{'report.expand.all' | translate}}
+  <mat-icon>expand_more</mat-icon>
+</button>
+
+<button (click)="collapseAll()" [disabled]="disableCollapseAll()" class="expand_button" mat-raised-button>
+  {{'report.collapse.all' | translate}}
+  <mat-icon>expand_less</mat-icon>
+</button>
+
+<div id="tree-wrapper-{{treeId}}">
+</div>

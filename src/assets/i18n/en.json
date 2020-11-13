@@ -25,6 +25,8 @@
     "download.apk.tooltip": "You can't download an application if you haven't logged in",
     "static.analysis": "Static analysis",
     "dynamic.analysis": "Dynamic analysis",
+    "expand.all": "Expand all",
+    "collapse.all": "Collapse all",
     "report.big": "This report is very big and expanding it can take a few seconds",
     "virusTotal.analysis": "VirusTotal analysis",
     "error.404": "The is no generated report of the application with sha256",

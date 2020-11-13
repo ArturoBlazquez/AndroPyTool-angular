@@ -29,9 +29,12 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/style-androPy.scss"
+              "src/style-androPy.scss",
+              "src/assets/jsonTree.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/jsonTree.js"
+            ]
           },
           "configurations": {
             "production": {

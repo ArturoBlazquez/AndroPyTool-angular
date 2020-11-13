@@ -26,6 +26,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {DownloadButtonsComponent} from './shared/download-buttons/download-buttons.component';
+import { JsonTreeComponent } from './shared/json-tree/json-tree.component';
+import {MatTreeModule} from '@angular/material/tree';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import {DownloadButtonsComponent} from './shared/download-buttons/download-butto
     ReportsComponent,
     ReportDetailComponent,
     UploadComponent,
-    DownloadButtonsComponent
+    DownloadButtonsComponent,
+    JsonTreeComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ import {DownloadButtonsComponent} from './shared/download-buttons/download-butto
     MatInputModule,
     FormsModule,
     MatTooltipModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
