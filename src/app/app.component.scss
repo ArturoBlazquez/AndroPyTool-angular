@@ -1,3 +1,10 @@
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  height: 64px;
+  z-index: 1000;
+}
+
 .toolbar-logo {
   height: 50px;
   position: absolute;
@@ -11,6 +18,12 @@ a {
 
 .go-back-button {
   display: none;
+}
+
+.app-body {
+  position: absolute;
+  top: 64px;
+  width: 100%;
 }
 
 
