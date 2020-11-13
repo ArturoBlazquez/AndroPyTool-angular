@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnChanges} from '@angular/core';
+import {AfterViewInit, Component, Input, OnChanges, ViewChild} from '@angular/core';
 
 declare const jsonTree: any;
 
@@ -9,7 +9,7 @@ declare const jsonTree: any;
 })
 export class JsonTreeComponent implements OnChanges, AfterViewInit {
   @Input() data: any;
-  @Input() treeId: string;
+  @ViewChild('treeWrapper') treeWrapper;
 
   tree: any;
 
@@ -22,29 +22,25 @@ export class JsonTreeComponent implements OnChanges, AfterViewInit {
   }
 
   updateTree(): void {
-    if (this.data) {
-      const wrapper = document.getElementById('tree-wrapper-' + this.treeId);
+    if (this.data && this.treeWrapper) {
+      this.tree = jsonTree.create(this.data, this.treeWrapper.nativeElement);
 
-      if (wrapper) {
-        this.tree = jsonTree.create(this.data, wrapper);
-
-        this.tree.expand(node => {
-          return node.childNodes.length < 1;
-        });
-      }
+      this.tree.expand(node => {
+        return node.childNodes.length < 1;
+      });
     }
   }
 
   disableExpandAll(): boolean {
-    const wrapper = document.getElementById('tree-wrapper-' + this.treeId);
+    if (this.data && this.treeWrapper) {
+      const numExpandedNodes = this.treeWrapper.nativeElement.getElementsByClassName('jsontree_node_expanded').length;
 
-    if (wrapper) {
-      const numExpandedNodes = wrapper.getElementsByClassName('jsontree_node_expanded').length;
-
-      const numNodes = wrapper.getElementsByClassName('jsontree_node_complex').length;
-      const numEmptyNodes = wrapper.getElementsByClassName('jsontree_node_complex jsontree_node_empty').length;
+      const numNodes = this.treeWrapper.nativeElement.getElementsByClassName('jsontree_node_complex').length;
+      const numEmptyNodes = this.treeWrapper.nativeElement.getElementsByClassName('jsontree_node_complex jsontree_node_empty').length;
 
       return numExpandedNodes === (numNodes - numEmptyNodes);
+    } else {
+      return false;
     }
   }
 
@@ -53,10 +49,10 @@ export class JsonTreeComponent implements OnChanges, AfterViewInit {
   }
 
   disableCollapseAll(): boolean {
-    const wrapper = document.getElementById('tree-wrapper-' + this.treeId);
-
-    if (wrapper) {
-      return wrapper.getElementsByClassName('jsontree_node_expanded').length <= 1;
+    if (this.data && this.treeWrapper) {
+      return this.treeWrapper.nativeElement.getElementsByClassName('jsontree_node_expanded').length <= 1;
+    } else {
+      return true;
     }
   }
 
