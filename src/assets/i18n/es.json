@@ -1,5 +1,7 @@
 {
   "upload": {
+    "androPyTool.description": "AndroPyTool es una herramienta que extrae características estáticas y dinámicas de APKs de Android. Combina varias aplicaciones conocidas de análisis de aplicaciones como DroidBox, FlowDroid, Strace, AndroGuard o VirusTotal.",
+    "androPyTool.more": "En el siguiente campo puedes subir tu propia aplicación para analizarla o buscar aplicaciones ya analizadas por hash.",
     "label": "Arrastra un archivo o haz click aquí para subirlo",
     "hint.1": "Tamaño máximo:",
     "hint.2": "Formato admitido:",
@@ -9,6 +11,8 @@
     "only.one.file": "No se puede subir más de un archivo",
     "oversized.file": "No se puede subir un archivo de más de 32MB",
     "apk.file": "El único formato de archivo permitido es .apk",
+    "virusTotal.hint": "La API key usada por defecto está limitada a 4 peticiones por minuto. Puedes usar tu propia API key como se explica en ",
+    "virusTotal.docs": "la documentación oficial de VirusTotal",
     "apk": "Subir una aplicación",
     "search.sha256": "Buscar por hash",
     "file.sha256": "Sha256 de la aplicación",

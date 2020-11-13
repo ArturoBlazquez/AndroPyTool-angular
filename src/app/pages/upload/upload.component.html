@@ -1,3 +1,10 @@
+<img alt="Logo AndroPyTool" class="upload-logo" src="assets/logo.png"/>
+
+<div class="upload-description">
+  <p>{{'upload.androPyTool.description' | translate}}</p>
+  <p>{{'upload.androPyTool.more' | translate}}</p>
+</div>
+
 <form *ngIf="!analyzingApk" class="main-form mat-card">
   <mat-tab-group>
     <mat-tab label="{{'upload.apk' | translate}}">
@@ -24,6 +31,8 @@
       <mat-form-field>
         <mat-label>VirusTotal API Key ({{'optional' | translate}})</mat-label>
         <input [(ngModel)]="virusTotalAPIKey" matInput name="virusTotalAPIKey" type="text">
+        <mat-hint>{{'upload.virusTotal.hint' | translate}}<a
+          href='https://developers.virustotal.com/reference'>{{'upload.virusTotal.docs' | translate}}</a></mat-hint>
       </mat-form-field>
 
       <button (click)="uploadFile()" [disabled]="!file" class="upload-button" color="primary" mat-raised-button
@@ -33,7 +42,7 @@
     </mat-tab>
 
     <mat-tab label="{{'upload.search.sha256' | translate}}">
-        <mat-icon class="search-icon">search</mat-icon>
+      <mat-icon class="search-icon">search</mat-icon>
       <mat-form-field>
         <mat-label>{{'upload.file.sha256' | translate}}</mat-label>
         <input (keyup.enter)="searchBySha()" [(ngModel)]="sha256" matInput name="sha256" type="text">
