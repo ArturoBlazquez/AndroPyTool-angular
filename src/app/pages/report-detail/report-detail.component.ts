@@ -86,4 +86,15 @@ export class ReportDetailComponent implements OnInit {
       }
     );
   }
+
+  firstLines(originalString: string, numLines: number): string {
+    return originalString.split('\n', numLines).slice(0, numLines).join('\n');
+  }
+
+  downloadStraceAnalysis(): void {
+    const downloadLink = document.createElement('a');
+    downloadLink.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(this.strace);
+    downloadLink.download = 'report_' + this.reportId + '_strace.csv';
+    downloadLink.click();
+  }
 }
